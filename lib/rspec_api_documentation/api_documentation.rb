@@ -1,3 +1,5 @@
+require 'active_support'
+include ActiveSupport::Inflector
 module RspecApiDocumentation
   class ApiDocumentation
     attr_reader :configuration, :index
@@ -31,7 +33,7 @@ module RspecApiDocumentation
 
     def writers
       [*configuration.format].map do |format|
-        RspecApiDocumentation.const_get("#{format}_writer".classify)
+        RspecApiDocumentation.const_get(classify("#{format}_writer")
       end
     end
   end
