@@ -1,6 +1,7 @@
 require 'rack/test'
 require 'webmock'
 require 'rspec/core/formatters/base_formatter'
+require 'active_support'
 
 module RspecApiDocumentation
   module DSL
