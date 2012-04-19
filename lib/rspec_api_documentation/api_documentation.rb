@@ -33,7 +33,7 @@ module RspecApiDocumentation
 
     def writers
       [*configuration.format].map do |format|
-        RspecApiDocumentation.const_get(classify("#{format}_writer")
+        RspecApiDocumentation.const_get(classify("#{format}_writer"))
       end
     end
   end
