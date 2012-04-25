@@ -70,6 +70,7 @@ module RspecApiDocumentation
 
       request_metadata = {}
 
+      request_metadata[:route] = example.metadata[:path]
       request_metadata[:request_method] = method.to_s.upcase
       request_metadata[:request_path] = action
       request_metadata[:request_body] = highlight_syntax(request_body, last_request.content_type, true)
